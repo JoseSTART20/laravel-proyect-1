@@ -21,10 +21,10 @@ require __DIR__.'/auth.php';
 
 Route::get('/activities', function() {
     return view('home.activities');
-});
+})->middleware(['auth', 'verified'])->name('activities');
 Route::get('/services', function() {
     return view('home.services');
-});
+})->middleware(['auth', 'verified'])->name('services');
 Route::get('/proyects', function() {
     return view('home.proyects');
-});
+})->middleware(['auth', 'verified'])->name('proyects');
